@@ -1,4 +1,4 @@
 # Pokedex
-905 Pokémons
+1010 Pokémons
 
 https://gabrielbonil.github.io/Pokedex/
