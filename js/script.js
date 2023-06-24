@@ -35,13 +35,14 @@ const renderPokemon = async (pokemon) => {
             if (data.id < 899){
                 pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['front_default'];
             } else {
-                if (data.id != 902 && data.id != 905){
-                    pokemonImage.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/${data.name}.png`;
-                } else if (data.id == 902){
-                    pokemonImage.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/basculegion.png`;
-                } else {
-                    pokemonImage.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/enamorus.png`;
-                }
+                pokemonImage.src = data['sprites']['front_default'];
+                // if (data.id != 902 && data.id != 905){
+                //     pokemonImage.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/${data.name}.png`;
+                // } else if (data.id == 902){
+                //     pokemonImage.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/basculegion.png`;
+                // } else {
+                //     pokemonImage.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/enamorus.png`;
+                // }
             }
         }
         input.value = '';
@@ -66,7 +67,7 @@ buttonPrev.addEventListener('click', () => {
 });
 
 buttonNext.addEventListener('click', () => {
-    if (searchPokemon < 905){
+    if (searchPokemon < 1010){
         searchPokemon += 1;
         renderPokemon(searchPokemon);
     }
